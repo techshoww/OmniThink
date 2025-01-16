@@ -51,7 +51,7 @@ Welcome to **OmniThink**, an innovative machine writing framework designed to re
 - **Enhanced Knowledge Density**: OmniThink focuses on expanding knowledge boundaries, resulting in articles that are rich in information and insights.
 - **Comprehensive Article Generation**: OmniThink constructs outlines and generates articles, delivering high-quality content that is both coherent and contextually robust.
 <div align="center">
-    <img src="assets/overview2.jpg" width="95%" height="auto" />
+    <img src="assets/main.jpg" width="95%" height="auto" />
 </div>
 
 
@@ -101,7 +101,7 @@ You can find your Article, Outline and mindmap in ./results/
 We are organizing the evaluation code and will open source it soon.
 
 
-## 🌻Acknowledgement
+# 🌻Acknowledgement
 
 - This work is implemented by [DsPY](https://github.com/stanfordnlp/dspy), [STORM](https://github.com/stanford-oval/storm) Sincere thanks for their efforts.
 - if you have any questions, please feel free to contact via xizekun.xzk@alibaba-inc.com, 1786594371@qq.com or xizekun2023@zju.edu.cn or create an issue.
