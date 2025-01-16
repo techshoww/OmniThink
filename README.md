@@ -17,11 +17,11 @@ through Thinking</h3>
 
 <!-- **Affiliations:** -->
 
-👏 Welcome to try OmniThink in our **[<img src="./assets/tongyi.png" width="14px" style="display:inline;"> Modelscope online demo](https://www.modelscope.cn/studios/iic/WebWalker/)**!
+👏 Welcome to try OmniThink in our **[<img src="./assets/tongyi.png" width="14px" style="display:inline;"> Modelscope online demo](https://www.modelscope.cn/studios/iic/OmniThink)**!
 
 <p align="center">
-<a href="https://alibaba-nlp.github.io/WebWalker/">[🤖Project]</a>
-<a href="https://arxiv.org/pdf/2501.07572">[📄Paper]</a>
+<a href="https://zjunlp.github.io/project/OmniThink">[🤖Project]</a>
+<a href="">[📄Paper]</a>
 <!-- <a href="## 🚩Citation">[🚩Citation]</a> -->
 
 </div>
@@ -51,7 +51,7 @@ Welcome to **OmniThink**, an innovative machine writing framework designed to re
 - **Enhanced Knowledge Density**: OmniThink focuses on expanding knowledge boundaries, resulting in articles that are rich in information and insights.
 - **Comprehensive Article Generation**: OmniThink constructs outlines and generates articles, delivering high-quality content that is both coherent and contextually robust.
 <div align="center">
-    <img src="assets/main.jpg" width="95%" height="auto" />
+    <img src="assets/main.jpg" width="80%" height="auto" />
 </div>
 
 
