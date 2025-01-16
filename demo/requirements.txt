@@ -1,0 +1,9 @@
+dashscope
+beautifulsoup4
+streamlit==1.37.1
+python-dotenv
+streamlit-vis-timeline==0.3.0
+tilse
+jsonlines
+rank-bm25
+transformers
