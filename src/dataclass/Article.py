@@ -6,6 +6,9 @@ from src.dataclass.interface import articleSectionNode, article
 from src.utils.ArticleTextProcessing import ArticleTextProcessing
 from src.utils.FileIOHelper import FileIOHelper
 
+# This code is originally sourced from Repository STORM
+# URL: [https://github.com/stanford-oval/storm]
+
 class Article(article):
     def __init__(self, topic_name):
         super().__init__(topic_name=topic_name)
