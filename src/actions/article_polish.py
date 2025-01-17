@@ -3,6 +3,8 @@ from typing import Union
 import dspy
 from src.utils.ArticleTextProcessing import ArticleTextProcessing
 
+# This code is originally sourced from Repository STORM
+# URL: [https://github.com/stanford-oval/storm]
 class ArticlePolishingModule():
     """
     The interface for article generation stage. Given topic, collected information from
