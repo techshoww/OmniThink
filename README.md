@@ -1,6 +1,9 @@
+
+
+</div>
 <div align="center">
 <p align="center">
-  <img src="assets/overview.jpg" width="50%" height="50%" />
+  <img src="assets/logo.jpg" width="50%" height="50%" />
 </p>
 </div>
 
@@ -24,6 +27,11 @@ through Thinking</h3>
 <a href="">[📄Paper]</a>
 <!-- <a href="## 🚩Citation">[🚩Citation]</a> -->
 
+</div>
+<div align="center">
+<p align="center">
+  <img src="assets/overview.jpg" width="50%" height="50%" />
+</p>
 </div>
 
 ## Table of Contents
