@@ -9,6 +9,9 @@ logging.basicConfig(level=logging.INFO, format='%(name)s : %(levelname)-8s : %(m
 logger = logging.getLogger(__name__)
 
 
+# This code is originally sourced from Repository STORM
+# URL: [https://github.com/stanford-oval/storm]
+
 class Information(ABC):
     """Abstract base class to represent basic information.
 
