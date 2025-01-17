@@ -46,7 +46,7 @@ through Thinking</h3>
 ---
 ## 📖 Quick Start
 
-- 🌏 The **Online Demo** is avaiable at [ModelScope](https://www.modelscope.cn/studios/jialongwu/WebWalker/) now！
+- 🌏 The **Online Demo** is avaiable at [ModelScope](https://www.modelscope.cn/studios/iic/OmniThink) now！
 
 
 <img src="assets/demo.gif">
