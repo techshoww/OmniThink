@@ -1,2 +1,1 @@
-# export DASHSCOPE_KEY=sk-197f888ac822444d8f8be092912c123b
-# export SEARCHKEY=19WaNVGhRjcjYcKuOV96w
+python -m examples.gpt4o
