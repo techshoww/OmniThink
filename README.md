@@ -116,3 +116,18 @@ We are organizing the evaluation code and will open source it soon.
 - if you have any questions, please feel free to contact via xizekun.xzk@alibaba-inc.com, 1786594371@qq.com or xizekun2023@zju.edu.cn or create an issue.
 
 
+
+## Citation
+If you find our repo useful in your research, please kindly consider cite:
+```angular2
+@misc{xi2025omnithinkexpandingknowledgeboundaries,
+      title={OmniThink: Expanding Knowledge Boundaries in Machine Writing through Thinking}, 
+      author={Zekun Xi and Wenbiao Yin and Jizhan Fang and Jialong Wu and Runnan Fang and Ningyu Zhang and Jiang Yong and Pengjun Xie and Fei Huang and Huajun Chen},
+      year={2025},
+      eprint={2501.09751},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2501.09751}, 
+}
+```
+
