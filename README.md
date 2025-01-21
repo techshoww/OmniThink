@@ -36,6 +36,7 @@ through Thinking</h3>
 
 ## Table of Contents
 
+- ⚠️[Announcement](#Announcement)
 - 🌻[Quick Start](#quick-start)
 - 🌟[Introduction](#Introduction)
 - 🔧[Dependencies](#Dependencies)
@@ -44,6 +45,9 @@ through Thinking</h3>
 - 🚩[Acknowledgement](#Acknowledgement)
 
 ---
+## ⚠️ Announcement 
+Due to the recent high volume of visitors, search API quota limitations, you may encounter an error: 'ValueError: Expected 2D array, got 1D array instead: array=[]. Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.' If this error occurs, please try again in a few hours.
+
 ## 📖 Quick Start
 
 - 🌏 The **Online Demo** is avaiable at [ModelScope](https://www.modelscope.cn/studios/iic/OmniThink) now！
