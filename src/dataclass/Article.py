@@ -238,8 +238,7 @@ class Article(article):
         def traverse(node):
             # A leaf node is defined as having no children
             if not node.children or len(node.children) == 0:
-                if len(node.keywords)>0:
-                    result.append(node)
+                result.append(node)
             else:
                 for child in node.children:
                     if len(node.keywords)>0:
@@ -248,7 +247,7 @@ class Article(article):
 
         traverse(self.root)
         
- 
+        print(len(result))
         return result
 
     @classmethod

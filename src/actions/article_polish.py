@@ -48,7 +48,6 @@ class ArticlePolishingModule():
         return polished_article
 
 
-
 class PolishPage(dspy.Signature):
     """You are a faithful text editor that is good at finding repeated information in the article and deleting them to make sure there is no repetition in the article. You won't delete any non-repeated part in the article. You will keep the inline citations and article structure (indicated by "#", "##", etc.) appropriately. Do your job for the following article."""
     article = dspy.InputField(prefix="The article you need to polish:\n", format=str)

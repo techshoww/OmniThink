@@ -137,7 +137,7 @@ class MindMap():
             if count == self.depth - 1:  # Check if it's the last layer
                 break
             
-            with concurrent.futures.ThreadPoolExecutor(max_workers=) as executor:
+            with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
                 futures = {executor.submit(node.extend): node for node in current_level}
                 
                 for future in concurrent.futures.as_completed(futures):
@@ -225,7 +225,7 @@ class MindMap():
         Prepare collected snippets and URLs for retrieval by encoding the snippets using paraphrase-MiniLM-L6-v2.
         collected_urls and collected_snippets have corresponding indices.
         """
-        self.encoder = SentenceTransformer('/mnt/8t/xzk/models/paraphrase-MiniLM-L6-v2')
+        self.encoder = SentenceTransformer('/mnt/nas-alinlp/xizekun/huggingface_cache/all-MiniLM-L6-v2')
         self.collected_urls = []
         self.collected_snippets = []
         seen_urls = set()

@@ -30,13 +30,16 @@ class ArticleGenerationModule():
         self.retriever = retriever
         self.section_gen = ConvToSection(engine=self.article_gen_lm)
 
-    def generate_section(self, topic, section_name, mindmap, section_query):
+
+    def generate_section(self, topic, section_name, mindmap, section_query, section_outline):
         collected_info = mindmap.retrieve_information(queries=section_query,
                                                                     search_top_k=self.retrieve_top_k)
-        output = self.section_gen(topic=topic,
-                                  section=section_name,
-                                  collected_info=collected_info,
-                                  )
+        output = self.section_gen(
+            topic=topic,
+            outline=section_outline,
+            section=section_name,
+            collected_info=collected_info,
+        )
 
         return {"section_name": section_name, "section_content": output.section, "collected_info": collected_info}
 
@@ -50,20 +53,24 @@ class ArticleGenerationModule():
         """
         mindmap.prepare_table_for_retrieval()
 
-        sections_to_write = article_with_outline.get_leaf_nodes()
+        sections_to_write = article_with_outline.get_first_level_section_names()
         section_output_dict_collection = []
 
         with concurrent.futures.ThreadPoolExecutor(max_workers=self.max_thread_num) as executor:
             future_to_sec_title = {}
             for section_title in sections_to_write:
-
-                section_node = article_with_outline.find_section(node=article_with_outline.root, name=section_title.section_name)
-                section_query = section_node.keywords
+                section_query = article_with_outline.get_outline_as_list(
+                    root_section_name=section_title, add_hashtags=False
+                )
+                queries_with_hashtags = article_with_outline.get_outline_as_list(
+                    root_section_name=section_title, add_hashtags=True
+                )
+                section_outline = "\n".join(queries_with_hashtags)
 
                 future_to_sec_title[
                     executor.submit(self.generate_section, 
-                                    topic, section_title.section_name, mindmap, section_query)
-                ] = section_title.section_name
+                                    topic, section_title, mindmap, section_query,section_outline)
+                ] = section_title
 
             for future in concurrent.futures.as_completed(future_to_sec_title):
                 section_output_dict_collection.append(future.result())
@@ -77,8 +84,6 @@ class ArticleGenerationModule():
 
         article.post_processing()
 
-
-
         return article
 
 class ConvToSection(dspy.Module):
@@ -88,7 +93,7 @@ class ConvToSection(dspy.Module):
         self.write_section = dspy.Predict(WriteSection)
         self.engine = engine
 
-    def forward(self, topic: str, section: str, collected_info: List):
+    def forward(self, topic: str, outline:str, section: str, collected_info: List):
         all_info = ''
         for idx, info in enumerate(collected_info):
             all_info += f'[{idx + 1}]\n' + '\n'.join(info['snippets'])
@@ -102,8 +107,6 @@ class ConvToSection(dspy.Module):
          
         section = section.replace('\[','[').replace('\]',']')
         return dspy.Prediction(section=section)
-        
-
 
 class WriteSection(dspy.Signature):
     """Write a Wikipedia section based on the collected information.
@@ -111,6 +114,7 @@ class WriteSection(dspy.Signature):
     Here is the format of your writing:
         1. Use "#" Title" to indicate section title, "##" Title" to indicate subsection title, "###" Title" to indicate subsubsection title, and so on.
         2. Use [1], [2], ..., [n] in line (for example, "The capital of the United States is Washington, D.C.[1][3]."). You DO NOT need to include a References or Sources section to list the sources at the end.
+        3. The language style should resemble that of Wikipedia: concise yet informative, formal yet accessible.
     """
     info = dspy.InputField(prefix="The Collected information:\n", format=str)
     topic = dspy.InputField(prefix="The topic of the page: ", format=str)

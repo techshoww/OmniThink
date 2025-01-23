@@ -15,7 +15,7 @@ class OpenAIModel_dashscope(dspy.OpenAI):
 
     def __init__(
             self,
-            model: str = "qwen-max-allinone",
+            model: str = "gpt-4",
             max_tokens: int = 2000,
             api_key: Optional[str] = None,
             **kwargs

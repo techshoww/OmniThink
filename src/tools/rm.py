@@ -29,7 +29,7 @@ class GoogleSearchAli(dspy.Retrieve):
             "Accept-Encoding": "utf-8",
             "Authorization": f"Bearer lm-/{key}== ",
         }
-# 
+
         self.template = {
             "rid": str(uuid.uuid4()),
             "scene": "dolphin_search_bing_nlp",
@@ -86,7 +86,7 @@ class GoogleSearchAli(dspy.Retrieve):
                 self.template["uq"] = query
 
                 response = requests.post(
-                    "http://101.37.167.147/gw/v1/api/msearch-sp/qwen-search",
+                    "https://nlp-cn-beijing.aliyuncs.com/gw/v1/api/msearch-sp/qwen-search",
                     data=json.dumps(self.template),
                     headers=self.header,
                 )              
@@ -219,14 +219,6 @@ class BingSearchAli(dspy.Retrieve):
             r = url_to_results[url]
             r['snippets'] = valid_url_to_snippets[url]['snippets']
             collected_results.append(r)
-        # print('-------') 
-        print(collected_results)
-        print(len(collected_results))
-        print("++++++++++++++")
-        # print(collected_results[0]['description'])
-        # print(collected_results[0]['snippets'])
-        # print(collected_results[0]['title'])        
-        # list of dict ,dict: ['url', 'title', 'description', 'snippets']
         return collected_results
 
 
